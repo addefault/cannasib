@@ -1,0 +1,25 @@
+//$animationDelay:(
+//    value:(100, 250),
+//    bp:('default', 'lg'),
+//);
+//* Формат
+//* 'fadeIn': (         // Имя анимации
+//*     active: true,   // Вывод анимации
+//*     bp: ('default') // Перечесление контрольных точек (default, sm, md, lg, hg)
+//* ),
+
+$animation: (
+    'fadeIn':           (active: true, bp: ('default', 'lg')),
+    'fadeInUp':         (active: true, bp: ('default', 'lg')),
+    'fadeInDown':       (active: true, bp: ('default', 'lg')),
+    'fadeInLeft':       (active: true, bp: ('default', 'lg')),
+    'fadeInLeftBottom': (active: false, bp: ('default')),
+    'fadeInLeftTop':    (active: false, bp: ('default')),
+    'fadeInRight':      (active: true, bp: ('default', 'lg')),
+    'fadeInRightBottom':(active: false, bp: ('default')),
+    'fadeInRightTop':   (active: false, bp: ('default')),
+    'buzz-out':         (active: true, bp: ('default', 'lg')),
+    'orbit':            (active: false, bp: ('default')),
+    'slideInUp':        (active: true, bp: ('default', 'lg')),
+    'slideInDown':      (active: true, bp: ('default', 'lg')),
+);

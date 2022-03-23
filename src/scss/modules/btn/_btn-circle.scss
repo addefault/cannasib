@@ -1,0 +1,18 @@
+//*
+.btn--circle {
+    --dp-flex: flex;
+    display: var(--dp-flex);
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    --btn-circle:#{size(42)};
+    border-radius: 50%;
+    height: var(--btn-circle);
+    width: var(--btn-circle);
+    flex-shrink: 0;
+    font-size: size(18);
+    @include media(hg) {
+        width: 42px;
+        height: 42px;
+    }
+}

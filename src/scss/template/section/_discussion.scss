@@ -1,0 +1,42 @@
+.discussion {
+    background: $color-vanilla;
+    padding-bottom: size(60);
+    @include media(xl) {
+        padding-bottom: size(10);
+    }
+    &__container {
+        padding-top: size(55);
+        padding-bottom: size(33);
+        @include media(hg) {
+            padding-bottom: size(65,115);
+        }
+        > h3 {
+            margin-bottom: size(30);
+            @include media(hg) {
+                margin-bottom: size(30,115);
+            }
+            br {
+                display: none;
+            }
+            @include media(xl) {
+                font-size: size(55, 115);
+                br {
+                    display: block;
+                }
+            }
+            + p {
+                margin-top: 0;
+                @include media(hg) {
+                    margin-bottom: size(30,115);
+                }
+            }
+        }
+        > p {
+            margin-top: size(54);
+            margin-bottom: size(34);
+            @include media(hg) {
+                margin-bottom: size(30,115);
+            }
+        }
+    }
+}

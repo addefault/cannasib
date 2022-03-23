@@ -1,0 +1,11 @@
+.btn--xsmall {
+    width: size(160);
+    height: size(42);
+    line-height: size(42);
+    font-weight: 600;
+    font-size: size(12);
+    @include media(hg) {
+        height: 42px;
+        line-height: 42px;
+    }
+}

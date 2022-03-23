@@ -1,0 +1,131 @@
+.form {
+    width: 100%;
+    max-width: 260px;
+    > * {
+        width: 100%;
+        margin-top: size(20);
+    }
+    > :first-child, > .form__message {
+        margin-top: 0;
+    }
+    &__container {
+        width: 100%;
+        max-width: 420px;
+        margin: 0 auto;
+        z-index: 2;
+        position: relative;
+    }
+    &__background {
+        width: 104%;
+        img {
+            width: 100%;
+            height: auto;
+            &.show\@xl {
+                display: none;
+            }
+            @include media(xl) {
+                &.show\@xl {
+                    display: block;
+                }
+                &.hide\@xl {
+                    display: none;
+                }
+            }
+        }
+    }
+    &__wrapper {
+        width: 100%;
+        height: 97%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: size(44) size(35);
+    }
+    &__checkbox {
+        font-size: size(12);
+        color: $color-black;
+        a {
+            text-decoration: underline;
+        }
+        [type=checkbox] {
+            display: none;
+            &._required + label {
+                color: $color-red;
+            }
+            &:checked + label::after {
+                content: "";
+                position: absolute;
+                top: size(3);
+                left: size(3);
+                width: size(10);
+                height: size(10);
+                border-radius: 2px;
+                color: inherit;
+                background: currentColor;
+            }
+        }
+        label {
+            position: relative;
+            padding-left: size(23);
+            display: block;
+            &::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: size(16);
+                height: size(16);
+                color: inherit;
+                background: $color-white;
+                border: 1px solid currentColor;
+                border-radius: 3px;
+            }    
+        }
+    }
+    &__message {
+        text-align: center;
+        font-size: size(12);
+        display: none;
+        > * {
+            margin-top: size(20);
+        }
+    }
+    &__success, &__error {
+        display: none;
+    }
+    &__success {
+        color: $color-green;
+    }
+    &__error {
+        color: $color-red;
+    }
+    &__loading {
+        position: relative;
+        span {
+            height: size(25);
+            width: size(25);
+            border-radius: 50%;
+            border: 2px solid currentColor;
+            display: block;
+            margin: 0 auto;
+            border-bottom: 0;
+            border-right: 0;
+            animation: loading .5s infinite linear;
+        }
+    }
+    &__field {
+        height: size(58);
+        line-height: size(58);
+        background: $color-white;
+        border: 1px solid $color-black;
+        border-radius: 60px;
+        padding: 0 size(29);
+        &._required {
+            border-color: currentColor;
+            color: $color-red;
+        }
+    }
+}

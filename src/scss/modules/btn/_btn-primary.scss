@@ -1,0 +1,30 @@
+.btn--primary {
+    background: $color-lime;   
+    color: $color-black;
+    &.btn--outline {
+        background: $color-lime;
+        @media (pointer: fine) {
+            &:hover {
+                border-color: $color-green;
+            }    
+        }
+        &:active {
+            background: $color-violet;
+            color: $color-lime;
+            border-color: $color-violet !important;
+        }
+    }
+    .icon {
+        color: $color-black;
+    }
+    @media (pointer: fine) {
+        &:hover {
+            background: $color-green;
+            color: $color-white;
+        }
+    }
+    &:active {
+        background: $color-violet;
+        color: $color-lime;
+    }
+}

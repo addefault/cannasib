@@ -1,0 +1,86 @@
+.statistics {
+    background-image: url(../images/global/noise.png);
+    background-color: $color-black;
+    padding-top: size(54);
+    padding-bottom: size(53);
+    position: relative;
+    &__info {
+        @include media(xl) {
+            display: flex;
+            justify-content: space-between;
+            > * {
+                width: 47%;
+            }
+        }
+    }
+    &__container {
+        color: $color-white;
+        h3 {
+            margin-bottom: size(30);
+            font-size: size(33);
+            @include media(xl) {
+                font-size: size(50, 115);
+                margin-bottom: size(28, 115);
+            }
+            b {
+                font-weight: normal;
+                color: $color-lime;
+            }
+        }
+        > p:last-of-type {
+            margin-top: size(8);
+            span {
+                font-weight: 600;
+                color: $color-lime;
+            }
+            @include media(xl) {
+                margin-top: 0;
+            }
+        }
+    }
+    i.decor__item {
+        &:nth-of-type(1) {
+            width: size(89);
+            height: size(116);
+            top: size(-33);
+            left: size(-50);
+            background-image: url(../images/decor/shape7.png);
+            @include media(hg) {
+                width: size(394,115);
+                height: size(516,115);
+                top: size(-151,115);
+                left: size(-210,115);
+            }
+        }
+        &:nth-of-type(2) {
+            width: size(162);
+            height: size(174);
+            bottom: size(150);
+            right: size(-100);
+            background-image: url(../images/decor/shape3.png);
+            @include media(hg) {
+                width: 397px;
+                height: 424px;
+                bottom: 70px;
+                right: -260px;
+            }
+            @include media(hd) {
+                right: -165px;
+            }
+        }
+        &:nth-of-type(3) {
+            width: size(120);
+            height: size(107);
+            bottom: size(-35);
+            left: 0;
+            transform: translateX(-50%);
+            background-image: url(../images/decor/leaf.svg);
+            @include media(hg) {
+                background-image: url(../images/decor/leaf@lg.svg);
+                width: 260px;
+                height: 230px;
+                bottom: -75px;
+            }
+        }
+    }
+}

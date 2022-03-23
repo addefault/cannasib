@@ -1,0 +1,342 @@
+.header {
+    background-image: url(../images/global/noise.png);
+    background-color: #141414;
+    .btn--xsmall {
+        display: var(--dp-block);
+    }
+    &__container {
+        padding-top: size(20);
+        padding-bottom: size(57);
+        color: $color-white;
+        position: relative;
+        > i.decor__item {
+            z-index: 0;
+        }
+        > i.decor__item:nth-of-type(1) {
+            top: size(2);
+            left: 0;
+            width: size(193);
+            height: size(131);
+            background-image: url(../images/header/shape1.png);
+            transform: translate(-45%,-5%);
+            @include media(hg) {
+                width: size(345,115);
+                height: size(235,115);
+                top: size(60,115);
+                left: size(-319,115);
+                transform: none;
+            }
+        }
+        > i.decor__item:nth-of-type(2) {
+            top: size(350);
+            right: size(-50);
+            width: size(162);
+            height: size(277);
+            background-image: url(../images/header/shape2.png);
+            @include media(lg) {
+                top: auto;
+                bottom: size(60);
+                right: size(-150);
+            }
+            @include media(xl) {
+                right: size(-65);
+            }
+            @include media(hg) {
+                width: 427px;
+                height: 479px;
+                right: -400px;
+            }
+        }
+        @include media(hg) {
+            padding-bottom: size(80,115);
+        }
+    }
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+        > * {
+            display: flex;
+            align-items: center;
+            &.header__menu {
+                display: var(--dp-flex);
+                @include media(lg) {
+                    flex-shrink: 0;
+                    font-size: size(12);
+                    text-transform: uppercase;
+                    font-weight: 600;
+                }
+                @include media(xl) {
+                    font-size: size(12, 115);
+                    li:not(:last-child) {
+                        margin-right: size(45);
+                    }
+                }
+            }
+            > *:not(:last-child) {
+                margin-right: size(20);
+                @include media(lg) {
+                    &.btn--xsmall {
+                        margin-right: 0;
+                    }
+                }
+                @include media(hg) {
+                    margin-right: 20px;
+                }
+            }
+        }
+    }
+    &__logo {
+        display: block;
+        width: size(140);
+        img {
+            width: 100%;
+        }
+    }
+    &__main {
+        margin-top: size(34);
+        @include media(lg) {
+            position: relative;
+        }
+        @include media(xl) {
+            text-align: right;
+        }
+        @include media(hg) {
+            padding-top: size(30,115);
+            margin-top: size(20,115);
+        }
+        ul {
+            display: flex;
+            flex-wrap: wrap;
+            margin-top: size(19);
+            @include media(lg) {
+                margin-top: size(40);
+                z-index: 2;
+            }
+            @include media(xl) {
+                text-align: left;
+                display: flex;
+                justify-content: space-between;
+                margin-top: size(55);
+            }
+            @include media(hg) {
+                margin-top: size(70,115);
+            }
+            li {
+                width: 50%;
+                flex-shrink: 0;
+                padding-left: size(18);
+                padding-right: size(10);
+                position: relative;
+                font-size: size(14);
+                margin-top: size(10);
+                @include media(lg) {
+                    width: 25%;
+                }
+                @include media(xl) {
+                    width: 21%;
+                }
+                @include media(hg) {
+                    margin-top: 0;
+                }
+                &::before {
+                    content: "";
+                    position: absolute;
+                    display: block;
+                    width: size(8);
+                    height: size(8);
+                    background: $color-lime;
+                    border-radius: 50%;
+                    top: size(8);
+                    left: 0;
+                    @include media(xl) {
+                        width: size(10, 115);
+                        height: size(10, 115);
+                        top: size(7);
+                    }
+                }
+            }
+        }
+    }
+    &__subheading {
+        color: $color-lime;
+        font-size: size(18);
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        margin-bottom: 10px;
+        @include media(md) {
+            justify-content: center;
+        }
+        @include media(lg) {
+            justify-content: flex-start;
+            padding-left: 34%;
+        }
+        @include media(xl) {
+            justify-content: flex-end;
+            font-size: size(24, 115);
+            margin-bottom: 20px;
+        }
+        .arrow {
+            display: var(--display-block);
+            width: size(60);
+            height: size(14);
+            background-image: url(../images/header/arrow-right.svg);
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            margin-left: 18px;
+            @include media(xl) {
+                background-image: url(../images/header/arrow-right@xl.svg);
+                width: size(159, 115);
+                height: size(18, 115);
+                margin-left: size(47, 115);
+            }
+        }
+    }
+    h1 {
+        position: relative;
+        @include media(md) {
+            text-align: center;
+            br {
+                display: none;
+            }
+        }
+        @include media(lg) {
+            text-align: left;
+            padding-left: 34%;
+            z-index: 2;
+            display: inline-block;
+            margin-bottom: size(10);
+            br {
+                display: block;
+            }
+        }
+        @include media(xl) {
+            font-size: size(84, 115);
+        }
+        &::after {
+            content: "";
+            position: absolute;
+            right: 0;
+            bottom: size(-35);
+            width: size(60);
+            height: size(60);
+            background-image: url(../images/decor/smile.svg);
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center center;
+            z-index: 2;
+            @include media(lg) {
+                bottom: size(-15);
+                right: size(-15);
+            }
+            @include media(xl) {
+                width: size(118, 115);
+                height: size(118, 115);
+                right: 0;
+                bottom: size(-42);
+            }
+        }
+    }
+    &__bottom {
+        > p br {
+            display: none;
+        }
+        @include media(md) {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            position: relative;
+            z-index: 1;
+            margin-top: size(15);
+            > p {
+                width: 50%;
+                padding-left: size(20);
+            }
+        }
+        @include media(lg) {
+            position: static;
+            > p {
+                padding-left: 34%;
+                width: 100%;
+            }
+        }
+        @include media(xl) {
+            margin-top: size(5);
+            > p {
+                padding-left: 48%;
+                text-align: left;
+                font-size: size(24, 115);
+                br {
+                    display: block;
+                }
+            }
+        }
+        @include media(hg) {
+            > p {
+                padding-left: 52%;
+            }
+        }
+    }
+    &__promo {
+        margin-top: size(16);
+        margin-bottom: size(14);
+        position: relative;
+        z-index: 1;
+        @include media(md) {
+            width: 50%;
+        }
+        @include media(lg) {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+            width: 30%;
+        }
+        @include media(xl) {
+            width: 45%;
+        }
+        @include media(hg) {
+            margin: 0;
+            width: 48%;
+        }
+        img {
+            width: 100%;
+        }
+        i.decor__item, &::after {
+            content: "";
+            display: block;
+            position: absolute;
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center center;
+        }
+        i.decor__item {
+            width: size(80);
+            height: size(78);
+            background-image: url(../images/decor/asterisk.svg);
+            top: size(45);
+            left: size(-40);
+            @include media(hg) {
+                width: 160px;
+                height: 158px;
+                top: auto;
+                bottom: size(65,115);
+                left: size(-80,115);
+            }
+        }
+        &::after {
+            width: size(60);
+            height: size(60);
+            background-image: url(../images/decor/smile2.svg);
+            bottom: size(18);
+            @include media(xl) {
+                width: size(118, 115);
+                height: size(118, 115);
+                bottom: 0;
+                right: 0;
+            }
+        }
+    }
+}

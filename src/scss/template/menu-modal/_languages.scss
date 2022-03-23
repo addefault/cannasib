@@ -1,0 +1,20 @@
+.languages-selector {
+    border: 1px solid $color-white;
+    border-radius: 60px;
+    display: inline-flex;
+    padding: size(5);
+    li {
+        height: size(30);
+        line-height: size(30);
+        padding: 0 size(9);
+        border-radius: 60px;
+        text-transform: uppercase;
+        font-weight: 600;
+        color: $color-white;
+        font-size: size(12);
+        &.active {
+            background: $color-lime;
+            color: $color-black;
+        }
+    }
+}

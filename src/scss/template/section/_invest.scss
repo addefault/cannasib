@@ -1,0 +1,192 @@
+.invest {
+    background-color: $color-green;
+    background-image: url(../images/global/noise.png);
+    position: relative;
+    i.decor__item {
+        &:nth-of-type(1) {
+            width: size(216);
+            height: size(114);
+            background-image: url(../images/invest/arrow.svg);
+            right: size(-125);
+            top: size(160);
+            @include media(xl) {
+                width: size(716,115);
+                height: size(380,115);
+                right: size(-300,115);
+                top: auto;
+                bottom: -1px;
+            }
+            @include media(hg) {
+                right: -400px;
+            }
+        }
+        &:nth-of-type(2) {
+            width: size(60);
+            height: size(60);
+            left: size(-15);
+            top: size(250);
+            background-image: url(../images/decor/smile.svg);
+            @include media(lg) {
+                width: size(100);
+                height: size(100);
+                right: size(30);
+                bottom: size(50);
+                left: auto;
+                top: auto;
+            }
+            @include media(xl) {
+                width: size(118,115);
+                height: size(118,115);
+                top: size(120,115);
+                right: size(-120,115);
+            }
+            @include media(hg) {
+                top: 105px;
+                right: 190px;
+            }
+        }
+    }
+    &__container {
+        padding-top: size(54);
+        padding-bottom: size(61);
+        @include media(lg) {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        @include media(hg) {
+            padding-top: 40px;
+            padding-bottom: 40px;
+        }
+    }
+    &__content {
+        position: relative;
+        @include media(lg) {
+            margin-right: size(50);
+        }
+        > p {
+            margin-top: size(9);
+            margin-bottom: size(32);
+            font-size: size(18);
+            color: $color-white;
+            padding-right: size(10);
+            @include media(lg) {
+                margin-bottom: 0;
+            }
+            @include media(xl) {
+                font-size: size(24,115);
+                margin-top: size(20,115);
+            }
+        }
+    }
+    &__heading {
+        display: flex;
+        @include media(md) {
+            align-items: center;
+            justify-content: space-between;
+        }
+        p {
+            text-transform: uppercase;
+            font-family: $font-secondary;
+            color: $color-lime;
+            font-size: size(28);
+            line-height: 1;
+            margin-right: size(6);
+            @include media(lg) {
+                font-size: size(60);
+            }
+            @include media(xl) {
+                font-size: size(84,115);
+            }
+            img {
+                width: size(45);
+                height: auto;
+                position: absolute;
+                bottom: size(-20);
+                left: 50%;
+                transform: translateX(-50%);
+                @include media(lg) {
+                    position: static;
+                    display: inline-block;
+                    transform: none;
+                    margin-left: size(20);
+                }
+                @include media(xl) {
+                    width: size(61,115);
+                    height: size(56,115);
+                }
+            }
+        }
+        > img {
+            display: inline-block;
+            width: size(75);
+            height: auto;
+            @include media(lg) {
+                position: absolute;
+                top: size(-50);
+                right: size(-110);
+                width: size(120);
+            }
+            @include media(xl) {
+                width: size(226,115);
+                height: size(226,115);
+                top: size(15,115);
+                right: auto;
+                left: size(-300,115);
+            }
+        }
+    }
+    &#legal {
+        .invest__heading p img {
+            bottom: auto;
+            top: size(57);
+        }
+        @include media(xl) {
+            .invest {
+                &__container {
+                    flex-direction: row-reverse;
+                    justify-content: space-between;
+                }
+                &__content {
+                    margin-right: 0;
+                    width: 48%;
+                    position: static;
+                }
+                &__heading > img {
+                    width: size(118,115);
+                    height: size(118,115);
+                    top: size(115,115);
+                    left: size(220,115);
+                }
+            }
+            .form__container {
+                margin: 0;
+            }
+        }
+        i.decor__item:nth-of-type(1) {
+            @include media(xl) {
+                transform: rotate(180deg) translateX(55%);
+                left: 0;
+                right: auto;
+            }
+        }
+        i.decor__item:nth-of-type(2) {
+            background-image: url(../images/decor/smile2.svg);
+            transform: rotate(15deg);
+            left: size(-10);
+            @include media(xl) {
+                width: size(226,115);
+                height: size(226,115);
+                top: size(95,115);
+                right: size(-180,115);
+                left: auto;
+            }
+            @include media(hg) {
+                right: -90px;
+            }
+            @include media(hd) {
+                right: 140px;
+            }
+        }
+    }
+}

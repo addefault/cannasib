@@ -1,0 +1,292 @@
+.graph {
+    padding-top: size(35);
+    padding-bottom: size(80);
+    padding-left: size(65);
+    margin-bottom: size(54);
+    color: $color-white;
+    @include media(lg) {
+        margin-bottom: 0;
+    }
+    @include media(xl) {
+        padding-left: 105px;
+    }
+    &__container {
+        padding-right: 0;
+    }
+    &__wrapper {
+        position: relative;
+        height: size(237);
+        width: size(600);
+        @include media(lg) {
+            width: 857px;
+            height: 336px;
+        }
+        @include media(xl) {
+            width: 100%;
+            height: 420px;
+        }
+        &::before, &::after {
+            content: "";
+            display: block;
+            position: absolute;
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+        }
+        &::before {
+            top: 0;
+            left: 0;
+            width: size(14);
+            height: 100%;
+            background-image: url(../images/graph/arrow.svg);
+            @include media(lg) {
+                top: 2px;
+            }
+            @include media(xl) {
+                width: 18px;
+                top: 3px;
+                left: -8px;
+            }
+        }
+        &::after {
+            bottom: -3%;
+            left: size(6);
+            width: 100%;
+            height: size(14);
+            background-image: url(../images/graph/arrow2.svg);
+            @include media(xl) {
+                height: 19px;
+                left: 0;
+            }
+        }
+        > p {
+            position: absolute;
+            text-align: right;
+            font-size: size(22);
+            font-family: $font-secondary;
+            line-height: 1;
+            color: $color-lime;
+            @include media(xl) {
+                font-size: size(36, 115);
+            }
+            &:first-of-type {
+                left: size(-14);
+                transform: translateX(-100%);
+                @include media(xl) {
+                    left: -25px;
+                }
+            }
+            &:last-of-type {
+                right: size(8);
+                bottom: size(-4);
+                transform: translateY(100%);
+                @include media(xl) {
+                    bottom: -15px;
+                    z-index: 2;
+                }
+            }
+        }
+    }
+    &__axis {
+        position: absolute;
+        font-size: size(14);
+        li {
+            position: relative;
+            span {
+                position: absolute;
+            }
+        }
+        &--y {
+            bottom: 0;
+            left: size(-3);
+            @include media(lg) {
+                bottom: 9px;
+            }
+            @include media(xl) {
+                bottom: 0;
+                left: -18px;
+            }
+            li {
+                height: size(26);
+                width: size(10);
+                border-top: 1px solid $color-lime;
+                @include media(lg) {
+                    height: size(29);
+                }
+                @include media(xl) {
+                    height: 51px;
+                    width: 20px;
+                }
+                span {
+                    top: size(-12);
+                    left: size(-26);
+                    @include media(xl) {
+                        left: -40px;
+                    }
+                }
+            }
+        }
+        &--x {
+            bottom: size(-20);
+            left: size(7);
+            display: flex;
+            width: 100%;
+            @include media(lg) {
+                bottom: size(-22);
+            }
+            @include media(xl) {
+                bottom: -23px;
+            }
+            li {
+                width: calc(100% / 8);
+                height: size(20);
+                border-right: 1px solid $color-lime;
+                span {
+                    bottom: size(-20);
+                    right: size(-16);
+                }
+                @include media(xl) {
+                    height: 20px;
+                }
+            }
+        }
+    }
+    &__grid {
+        position: absolute;
+        width: 99%;
+        height: 85%;
+        background-image: url(../images/graph/grid.png);
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        bottom: 0;
+        left: 1%;
+        @include media(xl) {
+            height: 96%;
+        }
+    }
+    &__lining {
+        position: absolute;
+        bottom: size(15);
+        left: 2%;
+        height: 60%;
+        &.m\:show\@xl {
+            display: none;
+        }
+        @include media(xl) {
+            bottom: 2%;
+            height: 73%;
+            &.m\:show\@xl {
+                display: block;
+            }
+            &.m\:hide\@xl {
+                display: none;
+            }
+        }
+    }
+    &__data {
+        position: absolute;
+        width: 100%;
+        height: 90%;
+        bottom: 0;
+        left: 0.2rem;
+        display: flex;
+        align-items: flex-end;
+        font-size: size(14);
+        font-weight: 600;
+        color: $color-lime;
+        text-align: right;
+        @include media(xl) {
+            font-size: size(18, 115);
+        }
+        li {
+            width: calc(100% / 8);
+            padding-bottom: size(8);
+            @include media(xl) {
+                padding-bottom: 23px;
+            }
+            span {
+                position: relative;
+                display: inline-block;
+                &::before {
+                    content: "";
+                    display: block;
+                    position: absolute;
+                    bottom: size(-5);
+                    left: 50%;
+                    margin-left: size(-2.5);
+                    width: size(5);
+                    height: size(5);
+                    background: $color-white;
+                    border-radius: 50%;
+                    @include media(xl) {
+                        width: 10px;
+                        height: 10px;
+                        bottom: -23px;
+                    }
+                }
+            }
+            &:first-child {
+                margin-bottom: 4%;
+                @include media(xl) {
+                    margin-bottom: 6.5%;
+                }
+            }
+            &:nth-child(2) {
+                margin-bottom: 9.5%;
+            }
+            &:nth-child(3) {
+                margin-bottom: 12.5%;
+                @include media(xl) {
+                    margin-bottom: 13.5%;
+                }
+            }
+            &:nth-child(4) {
+                margin-bottom: 16.5%;
+                @include media(xl) {
+                    margin-bottom: 17%;
+                }
+            }
+            &:nth-child(5) {
+                margin-bottom: 19%;
+                @include media(xl) {
+                    margin-bottom: 21.5%;
+                }
+            }
+            &:nth-child(6) {
+                margin-bottom: 22%;
+                @include media(xl) {
+                    margin-bottom: 24.5%;
+                }
+            }
+            &:nth-child(7) {
+                margin-bottom: 25%;
+                @include media(xl) {
+                    margin-bottom: 26.5%;
+                }
+            }
+        }
+    }
+    &__smile {
+        display: block;
+        width: size(60);
+        height: size(60);
+        background-image: url(../images/decor/smile2.svg);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+        position: absolute;
+        left: 30%;
+        transform: rotate(30deg);
+        @include media(lg) {
+            width: size(80);
+            height: size(80);
+            left: 40%;
+            top: 15%;
+        }
+        @include media(xl) {
+            width: size(118, 115);
+            height: size(118, 115);
+            transform: rotate(40deg);
+            top: 11%;
+        }
+    }
+}

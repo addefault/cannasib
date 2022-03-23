@@ -1,0 +1,95 @@
+.footer {
+    background-color: $color-black;
+    background-image: url(../images/global/noise.png);
+    &__container {
+        padding-top: size(40);
+        padding-bottom: size(30);
+        color: $color-white;
+        @include media(lg) {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-direction: row-reverse;
+            > * {
+                width: 30%;
+            }
+        }
+    }
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: size(8);
+        @include media(md) {
+            justify-content: center;
+            > * {
+                margin: 0 size(10);
+            }
+        }
+        @include media(lg) {
+            margin-bottom: 0;
+            > :last-child {
+                margin-right: 0;
+            }
+            > :first-child {
+                margin-left: 0;
+            }
+        }
+        @include media(xl) {
+            flex-direction: row-reverse;
+            > :last-child {
+                margin-left: 0;
+                margin-right: 10px;
+            }
+            > :first-child {
+                margin-right: 0;
+                margin-left: 10px;
+            }
+        }
+    }
+    &__navigation {
+        ul {
+            display: flex;
+            flex-wrap: wrap;
+            text-transform: uppercase;
+            font-size: 14px;
+            font-weight: 600;
+            li {
+                width: 50%;
+                margin-top: size(25);
+                @include media(md) {
+                    width: calc(100% / 3);
+                }
+                @include media(lg) {
+                    width: 50%;
+                    margin: size(5) 0;
+                    padding: 0 size(4);
+                }
+                @include media(hg) {
+                    margin: size(9) 0;
+                }
+            }
+        }
+    }
+    &__logo {
+        display: block;
+        margin: size(15) 0 size(9);
+        @include media(lg) {
+            margin-top: 0;
+            img {
+                width: 160px;
+                height: auto;
+            }
+        }
+        @include media(hg) {
+            margin-bottom: 30px;
+        }
+    }
+    &__privacy {
+        text-decoration: underline;
+    }
+    &__privacy, &__copy {
+        font-size: 12px;
+        line-height: 2;
+    }
+}

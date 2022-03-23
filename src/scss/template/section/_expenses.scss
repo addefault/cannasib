@@ -1,0 +1,118 @@
+.expenses {
+    &__container {
+        padding-top: size(53);
+        padding-bottom: size(54);
+        @include media(hg) {
+            padding-top: 80px;
+            padding-bottom: 110px;
+        }
+        > h3 {
+            margin-bottom: size(30);
+            font-size: size(33);
+            @include media(lg) {
+                padding-left: 50%;
+            }
+            @include media(xl) {
+                padding-left: 51%;
+                font-size: size(50,115);
+            }
+        }
+        > p {
+            @include media(lg) {
+                padding-left: 50%;
+            }
+            @include media(xl) {
+                padding-left: 51%;
+            }
+        }
+        @include media(lg) {
+            position: relative;
+        }
+    }
+    &__photo {
+        margin: size(34) 0;
+        position: relative;
+        @include media(md) {
+            width: 40%;
+            flex-shrink: 0;
+            margin-right: size(20);
+        }
+        @include media(lg) {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 48%;
+            transform: translateY(-50%);
+            margin: 0;
+        }
+        .decor__item {
+            width: size(132);
+            height: size(141);
+            background-image: url(../images/decor/shape3.png);
+            top: size(3);
+            left: size(-74);
+            z-index: -1;
+            @include media(lg) {
+                top: size(60);
+                left: size(-54);
+            }
+            @include media(xl) {
+                width: size(252,115);
+                height: size(270,115);
+                top: 0;
+                left: size(-140,115);
+            }
+        }
+    }
+    &__info {
+        @include media(md) {
+            display: flex;
+            align-items: center;
+        }
+        @include media(lg) {
+            padding-left: 50%;
+        }
+        @include media(xl) {
+            padding-left: 51%;
+        }
+    }
+    p {
+        b {
+            display: block;
+        }
+    }
+    ul {
+        margin-top: size(29);
+        font-size: size(14);
+        @include media(lg) {
+            padding-left: 50%;
+            margin-top: size(15);
+            margin-bottom: size(15);
+        }
+        @include media(xl) {
+            padding-left: 51%;
+        }
+        li {
+            display: block;
+            padding-left: size(18);
+            position: relative;
+            &:not(:first-child) {
+                margin-top: size(20);
+                @include media(lg) {
+                    margin-top: size(10);
+                }
+            }
+            &::before {
+                content: "";
+                display: block;
+                width: 8px;
+                height: 8px;
+                background: $color-lime;
+                position: absolute;
+                top: size(7);
+                left: 0;
+                border-radius: 50%;
+            }
+        }
+    }
+}

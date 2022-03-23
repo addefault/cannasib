@@ -1,0 +1,130 @@
+.quote {
+    background-color: #03824D;
+    background-image: url(../images/global/noise.png);
+    &__container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: size(55);
+        padding-bottom: size(53);
+        @include media(lg) {
+            flex-direction: row;
+            justify-content: space-between;
+        }
+    }
+    &__picture-block {
+        position: relative;
+        z-index: 1;
+        @include media(lg) {
+            flex-shrink: 0;
+        }
+        &::before, &::after {
+            content: "";
+            display: block;
+            position: absolute;
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: contain;
+        }
+        &::before {
+            width: size(273);
+            height: size(180);
+            background-image: url(../images/decor/shape4.png);
+            z-index: -3;
+            left: size(-90);
+            top: size(-32);
+            @include media(lg) {
+                left: size(-30);
+                top: 0;
+            }
+            @include media(xl) {
+                width: size(414, 115);
+                height: size(273, 115);
+                left: size(-60);
+            }
+        }
+        &::after {
+            width: size(140);
+            height: size(140);
+            background-image: url(../images/decor/solar.svg);
+            z-index: -2;
+            left: size(-13);
+            top: size(-30);
+            @include media(lg) {
+                width: size(120);
+                height: size(120);
+                left: size(50);
+                top: size(-10);
+            }
+            @include media(xl) {
+                width: size(149, 115);
+                height: size(149, 115);
+                left: size(80);
+                top: size(-15);
+            }
+        }
+    }
+    &__picture {
+        width: size(120);
+        @include media(lg) {
+            width: size(200);
+        }
+        @include media(xl) {
+            width: auto;
+        }
+        ~ img {
+            width: size(60);
+            transform: rotate(-30deg);
+            position: absolute;
+            bottom: size(5);
+            left: size(-35);
+            z-index: -1;
+            @include media(lg) {
+                left: size(10);
+            }
+            @include media(xl) {
+                left: size(15);
+                bottom: size(10);
+                width: size(80);
+            }
+        }
+    }
+    blockquote {
+        text-align: right;
+        @include media(sm) {
+            text-align: center;
+        }
+        @include media(lg) {
+            text-align: right;
+        }
+        p {
+            line-height: 1;
+            text-transform: uppercase;
+            color: $color-lime;
+            font-family: $font-secondary;
+            font-size: size(28);
+            margin-top: size(15);
+            margin-bottom: size(10);
+            @include media(lg) {
+                font-size: size(55);
+                margin-bottom: size(15);
+            }
+            @include media(xl) {
+                font-size: size(84, 115);
+            }
+            @include media(hg) {
+                margin-bottom: 20px;
+            }
+        }
+        span {
+            color: $color-white;
+            font-size: size(18);
+            @include media(lg) {
+                font-size: size(20);
+            }
+            @include media(xl) {
+                font-size: size(21);
+            }
+        }
+    }
+}

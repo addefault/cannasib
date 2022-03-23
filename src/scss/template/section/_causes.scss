@@ -1,0 +1,102 @@
+.causes {
+    background: $color-vanilla;
+    position: relative;
+    &__container {
+        padding-top: size(53);
+        padding-bottom: size(71);
+        position: relative;
+        z-index: 2;
+        @include media(xl) {
+            padding-bottom: size(120,115);
+        }
+        @include media(hg) {
+            padding-top: 70px;
+        }
+        > p {
+            margin-top: size(30);
+            margin-bottom: size(33);
+            @include media(xl) {
+                width: 55%;
+            }
+            @include media(hg) {
+                margin-top: 27px;
+                margin-bottom: 27px;
+            }
+        }
+        > h3 {
+            font-size: size(33);
+            @include media(xl) {
+                font-size: size(50,115);
+            }
+        }
+    }
+    &__items {
+        @include media(md) {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+    }
+    &__item {
+        background: $color-white;
+        padding: 20px 20px 35px;
+        border: 1px solid $color-black;
+        box-shadow: 9px 9px 0 $color-lime, 10px 8px 0 $color-black, 8px 10px 0 $color-black, 10px 10px 0 $color-black;
+        margin-bottom: size(40);
+        @include media(md) {
+            width: 48%;
+        }
+        @include media(lg) {
+            width: 31%;
+        }
+        @include media(md, max) {
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+        @include media(xl) {
+            width: size(340,115);
+            min-height: size(312,115);
+            margin-bottom: size(60,115);
+            box-shadow: 19px 19px 0 $color-lime, 20px 18px 0 $color-black, 18px 20px 0 $color-black, 20px 20px 0 $color-black;
+            &:nth-child(3n+2) {
+                transform: translateY(80px);
+            }
+        }
+        &-icon {
+            height: 90px;
+        }
+        &-title {
+            margin-top: 34px;
+            margin-bottom: size(9);
+            font-weight: 600;
+            text-transform: uppercase;
+            @include media(xl) {
+                margin-bottom: 7px;
+            }
+        }
+        &-desc {
+            font-size: size(14);
+        }
+    }
+    .decor__item {
+        width: size(180);
+        height: size(161);
+        bottom: size(-55);
+        right: 0;
+        background-image: url(../images/decor/leaf3.svg);
+        transform: translateX(50%);
+        z-index: 2;
+        @include media(hg) {
+            width: 330px;
+            height: 290px;
+            bottom: -97px;
+            background-image: url(../images/decor/leaf3@hg.svg);
+        }
+        @include media(hd) {
+            width: 685px;
+            height: 613px;
+            bottom: -164px;
+        }
+    }
+}

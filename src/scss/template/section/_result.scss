@@ -1,0 +1,40 @@
+.result {
+    background-image: url(../images/global/noise.png);
+    background-color: $color-green;
+    &__container {
+        padding-top: size(53);
+        padding-bottom: size(53);
+        text-align: center;
+        @include media(lg) {
+            padding-top: size(40);
+        }
+        @include media(hg) {
+            padding-top: size(50,115);
+            padding-bottom: size(80,115);
+        }
+    }
+    &__paragraph {
+        color: $color-white;
+        font-size: size(18);
+        margin-top: size(9);
+        @include media(xl) {
+            font-size: size(24, 115);
+            width: 85%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+    &__title {
+        font-size: size(46);
+        color: $color-lime;
+        text-shadow: -1px 0 $color-black, 0 1px $color-black, 1px 0 $color-black, 0 -1px $color-black, 3px 0 $color-white, 4.4px 0 $color-black;
+        @include media(lg) {
+            font-size: size(120);
+            text-shadow: -1px 0 $color-black, 0 1px $color-black, 1px 0 $color-black, 0 -1px $color-black, 7px 0 $color-white, 8.5px 0 $color-black, 8px -1px $color-black, 8px 1px $color-black, -2px 3px 5px rgba(0,0,0,.3);
+        }
+        @include media(xl) {
+            font-size: size(180, 115);
+            text-shadow: -1.5px 0 $color-black, 0 1.5px $color-black, 1.5px 0 $color-black, 0 -1.5px $color-black, 9px 0 $color-white, 10.5px 0 $color-black, 10px -1.5px $color-black, 10px 1.5px $color-black, -2px 3px 5px rgba(0,0,0,.5);
+        }
+    }
+}

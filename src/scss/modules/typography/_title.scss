@@ -1,0 +1,38 @@
+h1, h2, h3, h4 {
+    font-family: $font-secondary;
+    font-weight: normal;
+    font-style: normal;
+    line-height: 1;
+}
+h1 {
+    text-transform: uppercase;
+    font-size: size(32);
+    span {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        color: $color-lime;
+        @include media(md) {
+            justify-content: center;
+        }
+        @include media(lg) {
+            justify-content: flex-start;
+        }
+        @include media(xl) {
+            justify-content: flex-end;
+            align-items: flex-end;
+            padding-right: size(44, 115);
+        }
+        img {
+            height: 33px;
+            margin-right: 6px;
+            @include media(xl) {
+                height: 56px;
+                margin-right: 8px;
+            }
+        }
+    }
+}
+h3 {
+    font-size: size(28);
+}

@@ -1,0 +1,98 @@
+.roadmap {
+    position: relative;
+    &__container {
+        padding-top: size(53);
+        padding-bottom: size(59);
+    }
+    &__info {
+        @include media(md) {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin: size(20) 0;
+            > * {
+                width: 48%;
+            }
+        }
+        p {
+            margin-top: size(30);
+            @include media(md) {
+                margin-top: size(10);
+                font-size: size(12);
+                &:first-child {
+                    margin-top: 0;
+                }
+            }
+            @include media(lg) {
+                font-size: size(17);
+            }
+        }
+        @include media(xl) {
+            padding-right: 54%;
+            > * {
+                width: 100%;
+            }
+            
+        }
+    }
+    h3 {
+        font-size: size(33);
+        @include media(xl) {
+            font-size: size(50, 115);
+            padding-right: 54%;
+        }
+    }
+    &__picture {
+        margin-top: size(34);
+        margin-bottom: size(56);
+        position: relative;
+        @include media(lg) {
+            margin-top: size(20);
+            margin-bottom: size(20);
+        }
+        @include media(xl) {
+            position: absolute;
+            top: 0;
+            right: 0;
+            margin: 0;
+            width: 48%;
+        }
+        img {
+            width: 100%;
+        }
+        &::after {
+            content: "";
+            position: absolute;
+            top: 55%;
+            transform: translateY(-50%);
+            right: size(-75);
+            width: size(139);
+            height: size(159);
+            background-image: url(../images/decor/shape5.png);
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center center;
+            z-index: -1;
+            @include media(hg) {
+                width: size(261,115);
+                height: size(297,115);
+                right: size(-135,115);
+            }
+        }
+    }
+    i.decor__item {
+        &:nth-of-type(1) {
+            width: size(89);
+            height: size(116);
+            top: 0;
+            left: 0;
+            background-image: url(../images/decor/shape7.png);
+        }
+    }
+    &__header {
+        @include media(xl) {
+            position: relative;
+            margin-bottom: size(56, 115);
+        }
+    }
+}

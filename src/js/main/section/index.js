@@ -1,0 +1,6 @@
+@@include("header.js",{})
+@@include("discussions.js",{})
+@@include("statistics.js",{})
+@@include("causes.js",{})
+@@include("faq.js",{})
+@@include("footer.js",{})

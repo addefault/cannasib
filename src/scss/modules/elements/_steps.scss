@@ -1,0 +1,289 @@
+.steps {
+    &__title {
+        font-size: size(22);
+        padding-right: size(40);
+        position: relative;
+        @include media(xl) {
+            font-size: size(36, 115);
+            padding-right: size(55);
+        }
+        &::after {
+            content: "";
+            display: block;
+            position: absolute;
+            width: size(26);
+            height: size(18);
+            background-image: url(../images/roadmap/check.svg);
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center center;
+            top: size(2);
+            right: 0;
+            @include media(xl) {
+                background-image: url(../images/roadmap/check@xl.svg);
+                width: size(60, 115);
+                height: size(42, 115);
+                top: size(5);
+            }
+        }
+    }
+    &__date {
+        font-weight: 600;
+        font-size: size(14);
+        text-transform: uppercase;
+        margin-top: size(12);
+        margin-bottom: size(30);
+        display: block;
+        @include media(md) {
+            display: flex;
+            align-items: center;
+        }
+        @include media(xl) {
+            font-size: size(18, 115);
+            margin-top: size(8, 115);
+            margin-bottom: size(20, 115);
+        }
+        span {
+            display: inline-block;
+            width: size(25);
+            height: size(14);
+            background: url(../images/roadmap/arrow.svg) center/contain no-repeat;
+            vertical-align: middle;
+            margin-left: size(9);
+            @include media(md) {
+                flex-shrink: 0;
+            }
+            @include media(xl) {
+                background-image: url(../images/roadmap/arrow@xl.svg);
+                width: size(40, 115);
+                height: size(18, 115);
+                margin-left: size(19, 115);
+            }
+        }
+    }
+    &__details {
+        font-size: size(14);
+        li {
+            padding-left: size(18);
+            position: relative;
+            &:not(:last-child) {
+                margin-bottom: size(25);
+                @include media(xl) {
+                    margin-bottom: size(15);
+                }
+            }
+            &::before {
+                content: "";
+                display: block;
+                background: $color-lime;
+                width: size(8);
+                height: size(8);
+                border-radius: 50%;
+                position: absolute;
+                top: size(7);
+                left: 0;
+            }
+        }
+    }
+    &__picture {
+        margin-top: size(35);
+        position: relative;
+        &-main {
+            width: 100%;
+        }
+        img:not(.steps__picture-main) {
+            position: absolute;
+        }
+        @include media(md) {
+            width: 50%;
+            flex-shrink: 0;
+            margin-left: size(15);
+            margin-top: 0;
+        }
+        @include media(xl) {
+            margin-left: 0;
+        }
+    }
+    &__icon1 {
+        width: 22%;
+        z-index: 1;
+        bottom: 30%;
+        left: 18%;
+    }
+    &__icon2 {
+        width: 58%;
+        bottom: -2%;
+        right: 2%;
+        z-index: 3;
+        @include media(xl) {
+            width: 55%;
+        }
+    }
+    &__icon3 {
+        width: 60%;
+        top: 1%;
+        left: 22%;
+        z-index: 2;
+        @include media(xl) {
+            top: 0;
+        }
+    }
+    &__icon4 {
+        display: var(--dp-block);
+        width: 10%;
+        top: 40.5%;
+        left: 60%;
+    }
+    &__item {
+        padding-right: size(80);
+        position: relative;
+        @include media(md) {
+            padding-right: size(30);
+            display: flex;
+            align-items: center;
+        }
+        @include media(xl) {
+            padding-right: 0;
+            justify-content: space-between;
+            > * {
+                width: 39.5%;
+            }
+        }
+        p {
+            font-size: size(14);
+            margin-top: size(20);
+            @include media(md) {
+                margin-top: size(10);
+            }
+            @include media(xl) {
+                margin-top: size(20);
+            }
+        }
+        &:last-child {
+            .steps__picture {
+                margin-top: size(20);
+                @include media(xl) {
+                    margin-top: 0;
+                }
+            }
+            @include media(xl) {
+                align-items: flex-start;
+            }
+        }
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: size(26);
+            width: size(8);
+            height: 100%;
+            background: $color-vanilla;
+            border: 1px solid #000000;
+            border-radius: 60px;
+            @include media(md) {
+                right: 0;
+            }
+            @include media(xl) {
+                width: size(20, 115);
+                right: auto;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+        &:first-child::before {
+            background: $color-lime;
+        }
+        &:first-child::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: size(60);
+            height: size(60);
+            transform: translateY(50%);
+            border-radius: 50%;
+            background-color: $color-violet;
+            background-image: url(../images/roadmap/leaf-arrow.svg);
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: 66% auto;
+            border: 1px solid #000;
+            z-index: 1;
+            @include media(md) {
+                right: size(4);
+                transform: translate(50%,50%);
+            }
+            @include media(xl) {
+                width: size(160, 115);
+                height: size(160, 115);
+                right: auto;
+                left: 50%;
+                transform: translate(-50%, 50%);
+            }
+        }
+        &:last-child {
+            padding-top: size(50);
+            @include media(xl) {
+                padding-top: 0;
+            }
+        }
+        &:first-child {
+            @include media(xl) {
+                flex-direction: row-reverse;
+                padding-bottom: size(50);
+            }
+        }
+    }
+    &__gallery {
+        display: flex;
+        justify-content: space-between;
+        margin-top: size(35);
+        margin-bottom: size(20);
+        position: relative;
+        @include media(md) {
+            margin-top: size(20);
+        }
+        @include media(xl) {
+            margin-top: size(30);
+        }
+        &-item {
+            overflow: hidden;
+            &:not(:last-child) {
+                margin-right: 7%;
+            }
+            &:first-child {
+                border-radius: size(10) size(10) size(10) 0;
+                @include media(xl) {
+                    border-radius: size(42, 115) size(42, 115) 0 size(42, 115);
+                }
+            }
+            &:last-child {
+                border-radius: size(10) size(10) 0 size(10);
+                box-shadow: size(4) size(4) 0 $color-lime, size(5) size(5) 0 $color-black, size(3) size(5) 0 $color-black, size(5) size(3) 0 $color-black;
+                @include media(xl) {
+                    border-radius: size(42, 115) size(42, 115) 0 size(42, 115);
+                    box-shadow: 9px 9px 0 $color-lime, 10.5px 10.5px 0 $color-black, 8px 10px 0 $color-black, 10px 8px 0 $color-black;
+                }
+            }
+        }
+        &::before {
+            content: "";
+            position: absolute;
+            top: size(-15);
+            left: size(-90);
+            width: size(196);
+            height: size(178);
+            background-image: url(../images/decor/shape6.png);
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center;
+            z-index: -1;
+            @include media(xl) {
+                width: size(315, 115);
+                height: size(284, 115);
+                left: size(-70);
+                top: size(-20);
+            }
+        }
+    }
+}

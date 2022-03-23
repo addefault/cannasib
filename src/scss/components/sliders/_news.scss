@@ -1,0 +1,44 @@
+.news {
+    &__item {
+        display: flex;
+        flex-direction: column;
+        > img {
+            width: 100%;
+            height: size(146);
+            object-fit: cover;
+            border-bottom: 1px solid $color-black;
+            @include media(xl) {
+                height: size(230, 115);
+            }
+        }
+    }
+    &__date {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-size: size(12);
+        color: $color-green;
+    }
+    &__block {
+        padding: size(15) size(10) size(39);
+        background: $color-white;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        @include media(xl) {
+            padding: size(33, 115) size(20, 115) size(40, 115);
+        }
+    }
+    &__title {
+        font-weight: 600;
+        margin-top: 10px;
+        margin-bottom: size(34);
+        @include media(xs) {
+            font-size: size(14);
+        }
+        @include media(xl) {
+            font-size: size(18, 115);
+        }
+    }
+}

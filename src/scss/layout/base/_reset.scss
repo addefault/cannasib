@@ -1,0 +1,49 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box; 
+}
+html {
+    text-size-adjust: none;
+}
+html, body {
+    overflow-x: hidden;
+}
+img {
+    display: block;
+    max-width: 100%;
+}
+
+a {
+    text-decoration: none;
+    transition-duration: $td;
+    color: inherit;
+}
+//table {
+//    border-collapse:collapse;
+//    border-spacing:0
+//}
+ul {
+    list-style: none;
+}
+h1,
+h2,
+h3,
+h4,
+h5, 
+p,
+ul,
+ol,
+blockquote {
+    margin: 0;
+    padding: 0;
+}
+iframe {
+    border: 0;
+}
+b, strong {
+    font-weight: 700;
+}
+h2 {
+    font-size: size(16);
+}

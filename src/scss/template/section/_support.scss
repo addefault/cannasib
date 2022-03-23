@@ -1,0 +1,151 @@
+.support {
+    background: $color-vanilla;
+    &__container {
+        padding-top: size(54);
+        padding-bottom: size(60);
+        > p {
+            margin: size(30) 0;
+            @include media(hg) {
+                margin: 27px 0;
+            }
+        }
+        h3 {
+            font-size: size(33);
+            @include media(xl) {
+                font-size: size(50,115);
+            }
+        }
+    }
+    &__items {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    &__item {
+        width: calc(100% / 3);
+        text-align: center;
+        font-size: size(14);
+        margin-bottom: size(16);
+        @include media(md) {
+            width: calc(100% / 5);
+        }
+        &:nth-child(2) .support__icon {
+            background: $color-dgreen;
+            path {
+                fill: $color-white;
+            }
+        }
+        &:nth-child(3) .support__icon {
+            background: $color-green;
+            path {
+                fill: $color-lime;
+            }
+        }
+        &:nth-child(4) .support__icon {
+            background: $color-lgreen;
+        }
+        &:nth-child(5) .support__icon {
+            background: $color-violet;
+            path {
+                fill: $color-lime;
+            }
+        }
+        &:hover {
+            svg {
+                animation: swing .5s ease-in;
+            }
+        }
+        @keyframes swing {
+            0% {
+                transform: rotate(0deg);
+            }
+            25% {
+                transform: rotate(15deg);
+            }
+            50% {
+                transform: rotate(0deg);
+            }
+            75% {
+                transform: rotate(-15deg);
+            }
+            100% {
+                transform: rotate(0deg);
+            }
+        }
+    }
+    &__title {
+        display: block;
+        margin-top: size(4);
+        @include media(xl) {
+            margin-top: size(14,115);
+        }
+    }
+    &__icon {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        width: size(42);
+        height: size(42);
+        border-radius: 50%;
+        border: 1px solid $color-black;
+        background: $color-lime;
+        @include media(xl) {
+            width: size(60,115);
+            height: size(60,115);
+            svg {
+                width: size(39,115);
+                height: auto;
+            }
+        }
+    }
+    &__map {
+        position: relative;
+        z-index: 1;
+        @include media(lg) {
+            width: 70%;
+            margin: 0 auto;
+        }
+        @include media(xl) {
+            margin-top: size(15,115);
+        }
+        @include media(hg) {
+            width: 65%;
+        }
+        img {
+            width: 100%;
+            height: auto;
+        }
+        i.decor__item {
+            z-index: -1;
+            &:nth-of-type(1) {
+                width: size(78);
+                height: size(100);
+                background-image: url(../images/decor/shape7.png);
+                top: size(15);
+                left: size(-25);
+                @include media(xl) {
+                    width: size(174,115);
+                    height: size(225,115);
+                    top: size(35,115);
+                    left: size(-75,115);
+                }
+            }
+            &:nth-of-type(2) {
+                width: size(57);
+                height: size(93);
+                background-image: url(../images/decor/shape8.png);
+                top: size(12);
+                right: size(-20);
+                @include media(xl) {
+                    width: size(139,115);
+                    height: size(230,115);
+                    top: size(170,115);
+                    right: 0;
+                }
+                @include media(hg) {
+                    top: 135px;
+                }
+            }
+        }
+    }
+}
